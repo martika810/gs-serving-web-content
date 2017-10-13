@@ -10,6 +10,7 @@ public class GreetingController {
 
     @RequestMapping("/greeting")
     public String greeting(@RequestParam(value="name", required=false, defaultValue="World") String name, Model model) {
+        CheckHttpClient.callEbayCategorySite();
         model.addAttribute("name", name);
         return "greeting";
     }
